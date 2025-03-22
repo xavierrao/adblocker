@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Ad Blocker",
+    "version": "1.0.0",
+    "description": "Simple ad blocker with 2 rules",
+    "permissions": [
+        "declarativeNetRequest"
+    ],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    }
+}
