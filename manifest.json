@@ -10,17 +10,22 @@
     "background": {
       "service_worker": "background.js"
     },
+    "action": {
+      "default_popup": "popup.html"
+    },
     "declarative_net_request": {
       "rule_resources": [
         {
           "id": "easylist_rules",
           "enabled": true,
           "path": "rules/easylist_rules.json"
+        },
+        {
+          "id": "easyprivacy",
+          "enabled": true,
+          "path": "rules/easyprivacy.json"
         }
       ]
-    },
-    "action": {
-      "default_popup": "popup.html"
     }
   }
   

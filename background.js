@@ -1,7 +1,7 @@
 let isEnabled = true;
 
 // List of all the rule resources by ID
-const ruleIds = ['easylist_rules']; // Add more rule IDs as necessary
+const ruleIds = ['easylist_rules', 'easyprivacy']; // Add more rule IDs as necessary
 
 // Listen for changes to the extension's storage
 chrome.storage.onChanged.addListener((changes, namespace) => {
