@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ad Blocker Toggle</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      #toggleButton {
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #4CAF50; /* Green color for enabled state */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+      }
+      #toggleButton.disabled {
+        background-color: #f44336; /* Red color for disabled state */
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleButton">Enable Ad Blocker</button>
+    
+    <!-- Link to the external JS file -->
+    <script src="popup.js"></script>
+  </body>
+</html>
