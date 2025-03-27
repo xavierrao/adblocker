@@ -2,16 +2,16 @@
     "manifest_version": 3,
     "name": "Ad Blocker",
     "version": "1.0.0",
-    "description": "Simple ad blocker with 2 rules",
+    "description": "Simple ad blocker using EasyList Filter List",
     "permissions": [
         "declarativeNetRequest"
     ],
     "declarative_net_request": {
         "rule_resources": [
             {
-                "id": "ruleset_1",
+                "id": "easylist_rules",
                 "enabled": true,
-                "path": "rules.json"
+                "path": "easylist_rules.json"
             }
         ]
     }

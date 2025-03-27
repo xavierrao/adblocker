@@ -23,11 +23,11 @@ def regenerate_easylist():
         return ''.join([ch for ch in url if ord(ch) < 128])
 
     # Convert EasyList lines to DeclarativeNetRequest format
-    def convert_to_declarative_net_request(easylist_lines):
+    def convert_to_declarative_net_request(lines):
         rules = []
         rule_id = 1  # Start rule IDs from 1
 
-        for line in easylist_lines:
+        for line in lines:
             line = line.strip()
             if line.startswith("!") or not line:  # Skip comments and empty lines
                 continue
@@ -53,7 +53,7 @@ def regenerate_easylist():
         return rules
 
     # Save the rules to a JSON file
-    def save_to_json(rules, filename="rules.json"):
+    def save_to_json(rules, filename="easylist_rules.json"):
         with open(filename, "w") as f:
             json.dump(rules, f, indent=4)
 
@@ -62,19 +62,19 @@ def regenerate_easylist():
     rules = convert_to_declarative_net_request(easylist_lines)
     save_to_json(rules)
 
-    print("DeclarativeNetRequest rules.json file generated.")
+    print("DeclarativeNetRequest easylist_rules.json file generated.")
     push_to_github()
 
-# Function to push the updated rules.json to GitHub
+# Function to push the updated easylist_rules.json to GitHub
 def push_to_github():
     repo_path = path.PATH  # Path to your local Git repository. Change this to work on your computer
     repo = Repo(repo_path)
     
     # Add the changes to Git
-    repo.git.add('rules.json')
+    repo.git.add('easylist_rules.json')
     
     # Commit the changes
-    repo.git.commit('-m', 'Update rules.json with the latest Easylist filters')
+    repo.git.commit('-m', 'Update easylist_rules.json with the latest Easylist filters')
     
     # Push the changes to GitHub
     origin = repo.remote(name='origin')
