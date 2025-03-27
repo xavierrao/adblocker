@@ -11,7 +11,7 @@
             {
                 "id": "easylist_rules",
                 "enabled": true,
-                "path": "easylist_rules.json"
+                "path": "rules/easylist_rules.json"
             }
         ]
     }

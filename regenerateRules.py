@@ -53,7 +53,7 @@ def regenerate_easylist():
         return rules
 
     # Save the rules to a JSON file
-    def save_to_json(rules, filename="easylist_rules.json"):
+    def save_to_json(rules, filename="rules/easylist_rules.json"):
         with open(filename, "w") as f:
             json.dump(rules, f, indent=4)
 
@@ -71,10 +71,10 @@ def push_to_github():
     repo = Repo(repo_path)
     
     # Add the changes to Git
-    repo.git.add('easylist_rules.json')
+    repo.git.add('rules')
     
     # Commit the changes
-    repo.git.commit('-m', 'Update easylist_rules.json with the latest Easylist filters')
+    repo.git.commit('-m', 'Update all rule filter lists to most recent')
     
     # Push the changes to GitHub
     origin = repo.remote(name='origin')
@@ -83,4 +83,9 @@ def push_to_github():
     print("Successfully pushed changes to GitHub.")
 
 # Run the script immediately once to fetch and push for the first time
-regenerate_easylist()
+def regenerate_all_rules():
+    regenerate_easylist()
+
+    push_to_github()
+
+regenerate_all_rules
